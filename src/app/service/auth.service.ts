@@ -20,6 +20,10 @@ export class AuthService {
       'https://personalbspring.herokuapp.com/usuario/cadastrar',usuario);
   }
 
+  atualizar(usuario: Usuario): Observable<Usuario>{
+    return this.http.put<Usuario>('https://personalbspring.herokuapp.com/usuario/atualizar', usuario, this.token)
+  }
+
   getByIdUser(id:number): Observable<Usuario>{
     return this.http.get<Usuario>(`https://personalbspring.herokuapp.com/usuario/${id}`, this.token)
   }
